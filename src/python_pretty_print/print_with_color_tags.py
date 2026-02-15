@@ -1,8 +1,8 @@
 """Render `<color>...</color>` tags into ANSI foreground color escapes.
 
-Supported tags come from `scripts.colors.COLORS`, for example `<red>`,
-`<warning>`, and `<regular>`. Literal hex tags are also supported in the
-format `<#rrggbb>`.
+Supported tags come from `python_pretty_print.colors.COLORS`, for example
+`<red>`, `<warning>`, and `<regular>`. Literal hex tags are also supported
+in the format `<#rrggbb>`.
 """
 
 import re

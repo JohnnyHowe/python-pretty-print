@@ -1,22 +1,14 @@
 """
 Manual visual sanity check for pretty_print output.
 Run from this repository root:
-    python3 tests/visual_check_pretty_print.py
+    python3 -m tests.visual_check_pretty_print
 """
 
-import sys
-from pathlib import Path
+from python_pretty_print import pretty_print
 
-# Support direct execution (for example VS Code "Run Python File") by ensuring
-# the package directory is importable.
-PACKAGE_ROOT = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(PACKAGE_ROOT))
-sys.path.insert(0, str(Path(__file__).resolve().parent))
-
-from __init__ import pretty_print
-from visual_check_section_multicolor import run as run_multicolor_single_line
-from visual_check_section_palette import run as run_reference_palette
-from visual_check_section_visual_cases import run as run_visual_cases
+from .visual_check_section_multicolor import run as run_multicolor_single_line
+from .visual_check_section_palette import run as run_reference_palette
+from .visual_check_section_visual_cases import run as run_visual_cases
 
 
 def main() -> None:

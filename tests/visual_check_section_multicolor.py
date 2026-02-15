@@ -2,7 +2,7 @@
 
 from typing import Callable
 
-from visual_check_helpers import section, show
+from .visual_check_helpers import section, show
 
 
 def run(pretty_print: Callable[[str], None]) -> None:
