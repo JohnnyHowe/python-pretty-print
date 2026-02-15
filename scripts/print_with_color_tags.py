@@ -6,6 +6,7 @@ format `<#rrggbb>`.
 """
 
 import re
+from typing import Any
 from typing import Optional
 
 from .colors import COLORS
@@ -16,9 +17,27 @@ HEX_COLOR_PATTERN = re.compile(r"#[0-9a-f]{6}")
 ANSI_RESET = "\033[0m"
 
 
-def print_with_color_tags(text: str) -> None:
-    """Print `text` with supported color tags translated to ANSI escapes."""
-    print(_render_ansi_text(text))
+def print_with_color_tags(*args: object, **kwargs: Any) -> None:
+    """Print values with color-tag rendering, mirroring `print` arguments.
+
+    Supports `sep`, `end`, `file`, and `flush` like the built-in `print()`.
+    """
+    sep = kwargs.pop("sep", " ")
+    end = kwargs.pop("end", "\n")
+
+    if sep is None:
+        sep = " "
+    elif not isinstance(sep, str):
+        raise TypeError(f"sep must be None or a string, not {type(sep).__name__}")
+
+    if end is None:
+        end = "\n"
+    elif not isinstance(end, str):
+        raise TypeError(f"end must be None or a string, not {type(end).__name__}")
+
+    text = sep.join(str(arg) for arg in args)
+    rendered_text = _render_ansi_text(text)
+    print(rendered_text, end=end, **kwargs)
 
 
 def _render_ansi_text(text: str) -> str:
