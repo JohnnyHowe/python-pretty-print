@@ -4,7 +4,7 @@ Run from this repository root:
     python3 -m tests.visual_check_pretty_print
 """
 
-from python_pretty_print import pretty_print
+from src import *
 
 from .visual_check_section_multicolor import run as run_multicolor_single_line
 from .visual_check_section_palette import run as run_reference_palette
