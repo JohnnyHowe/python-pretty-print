@@ -12,4 +12,5 @@ COLORS = {
     "success": "#98c379",
     "todo": "#4F37D7",
     "regular": None,
+    "dull": "#4B4B4B"
 }
