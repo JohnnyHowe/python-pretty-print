@@ -1,10 +1,10 @@
 """
 Manual visual sanity check for pretty_print output.
 Run from this repository root:
-    python3 -m tests.visual_check_pretty_print
+    python3 -m tests.run_all
 """
 
-from src import *
+from python_pretty_print import pretty_print
 
 from .visual_check_section_multicolor import run as run_multicolor_single_line
 from .visual_check_section_palette import run as run_reference_palette
