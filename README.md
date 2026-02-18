@@ -12,6 +12,20 @@ pip install "python-pretty-print @ git+https://github.com/JohnnyHowe/python-pret
 
 Note: this uses a PEP 508 direct reference (`name @ git+url`), so `pip` installs the package as `python-pretty-print` while sourcing it from GitHub.
 
+Install into a virtual environment for the current shell session only:
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+pip install "python-pretty-print @ git+https://github.com/JohnnyHowe/python-pretty-print.git"
+```
+
+Deactivate when finished:
+
+```bash
+deactivate
+```
+
 ## Usage
 
 ```python
