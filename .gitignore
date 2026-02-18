@@ -210,3 +210,6 @@ AGENTS.md
 *.meta
 docs/
 *.meta
+
+
+.DS_Store
