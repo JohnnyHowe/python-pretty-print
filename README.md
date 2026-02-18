@@ -35,6 +35,17 @@ pretty_print("<green>Success</green> and <error>Error</error> in one line.")
 pretty_print("Custom hex: <#00bcd4>cyan-ish</#00bcd4>")
 ```
 
+## Project structure
+
+This repository uses a standard `src/` layout:
+- `src/python_pretty_print/` is the installable/importable package path
+
+Package consumers should import from:
+- `python_pretty_print`
+
+The package published via `pip` is configured from `pyproject.toml` and currently points to:
+- `src/python_pretty_print/`
+
 ## Supported tags
 
 Named tags:

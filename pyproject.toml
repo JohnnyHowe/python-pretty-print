@@ -9,4 +9,5 @@ description = "Pretty-print helper with simple color tags"
 requires-python = ">=3.10"
 
 [tool.setuptools]
+package-dir = {"" = "src"}
 packages = ["python_pretty_print"]
